@@ -1,0 +1,63 @@
+===========================
+Project Installation Guide
+===========================
+
+Welcome to the Project!
+
+Please follow these steps to install and run the project successfully.
+
+1. **Prerequisites:**
+   - PHP >= 7.4
+   - Composer (for dependency management)
+   - MySQL
+   - Apache web server
+
+---------------------------------------------------------
+2. **Download the Project:**
+    - Clone the repository:
+      git clone https://github.com/alhassan-cse/event-management-system
+
+
+---------------------------------------------------------
+4. **Create the Database:**
+    - Log in to MySQL and create a database:
+      mysql -u root -p CREATE DATABASE: `your_database_name`;
+      and Import the sql file in sql folder.
+
+---------------------------------------------------------
+4. **Configure the Database Connection:**
+    - Inside the project folder, find and open the `connect/Connect.php` file (or any similar file for database settings).
+    - Update the database credentials in the `Connect.php` file with your MySQL database information:
+
+    Example:
+
+    <?php
+    $db_server   = 'localhost';
+    $db_username = 'your_username_name';
+    $db_password = 'your_database_password';
+    $db_database = 'your_database_name'; 
+    ?>
+    
+---------------------------------------------------------
+7. **Test the Project Locally:**
+    - Open your browser and go to `http://localhost/your-project-folder/` (if using localhost).
+    - The project should now be running.
+
+9. **Troubleshooting:**
+    - If you encounter any issues, check the Apache or Nginx error logs located at:
+      /var/log/apache2/error.log (for Apache)
+      /var/log/nginx/error.log (for Nginx)
+    - Also check the PHP error logs for any issues during execution.
+
+---------------------------------------------------------
+ 
+Thank you for installing the project!
+
+For further assistance, please refer to the documentation provided with the project or reach out to us if you have any questions. I am available to help you with any setup or configuration issues you may encounter.
+
+Feel free to contact us via email at [alhassan.cse@gmail.com].
+
+We’re happy to assist and wish you the best of luck with your project!
+
+Best Regards,
+Al Hassan
