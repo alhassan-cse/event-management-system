@@ -8,21 +8,13 @@ include('app/UserController.php');
 include('app/Authentication.php');
 include('app/SettingController.php');
 
-//$apps = new App;
-//$db = new Connect();
-//$pdo = $db->getConnection();
-//$stmt = $pdo->query("SELECT * FROM events");
-//$events = $stmt->fetchAll();
-//print_r($events);die;
-
 $apps = new HomeController;
 $event = new EventController;
 $authentication = new Authentication;
 $user = new UserController;
 $setting = new SettingController;
 
-
-// print_r($settingResult);die;
+ 
  
 if(isset($_GET['status'])){ 
     $authentication->logout($user_type = 2);
@@ -83,6 +75,10 @@ $settingResult = $setting->settingDisplay($sql);
                         </li>
                     <?php } } ?>
                 </ul>
+                <form action="search.php" method="GET" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 m-2 text-white" type="submit">Search</button>
+                </form>
                 <div class="d-flex flex-row-reverse">
                     <?php 
                     if(isset($_SESSION['id'])){
@@ -165,6 +161,9 @@ $settingResult = $setting->settingDisplay($sql);
                 elseif($page == 'success'){
                     include('partials/success.php'); 
                 }
+                elseif($page == 'search'){
+                    include('partials/search.php'); 
+                }
             } 
             else{
                 include('content.php'); 
@@ -177,7 +176,7 @@ $settingResult = $setting->settingDisplay($sql);
                 <p class="float-right">
                     <a href="#">Back to top</a>
                 </p>
-                <p> Powered by <strong><?php echo ($settingResult[0]['app_name']) ? $settingResult[0]['app_name'] : ''?></strong> | © 2024 All Rights Reserved</p>
+                <p>Powered by <strong><?php echo ($settingResult[0]['app_name']) ? $settingResult[0]['app_name'] : ''?></strong> | © 2024 All Rights Reserved</p>
                 <p>Need help? Contact our support team at <?php echo ($settingResult[0]['email']) ? $settingResult[0]['email'] : ''?>.</p>
             </div>
         </footer>
