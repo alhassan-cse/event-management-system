@@ -176,8 +176,8 @@ $settingResult = $setting->settingDisplay($sql);
                 <p class="float-right">
                     <a href="#">Back to top</a>
                 </p>
-                <p>Powered by <strong><?php echo ($settingResult[0]['app_name']) ? $settingResult[0]['app_name'] : ''?></strong> | © 2024 All Rights Reserved</p>
-                <p>Need help? Contact our support team at <?php echo ($settingResult[0]['email']) ? $settingResult[0]['email'] : ''?>.</p>
+                <p>Powered by <strong><?php echo ($settingResult) ? $settingResult[0]['app_name'] : ''?></strong> | © 2024 All Rights Reserved</p>
+                <p>Need help? Contact our support team at <?php echo ($settingResult) ? $settingResult[0]['email'] : ''?>.</p>
             </div>
         </footer>
         <!-- Bootstrap core JavaScript================================================== -->
